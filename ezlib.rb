@@ -47,6 +47,7 @@ class String
     end
     def multi_sep xs,ys
     end
+
     def mulgrp_per nums,sepS=[" "], xs: nums, seps: sepS
         arr = self.split('').mulgrp_per *xs
         seps+=[" "]*(xs.size-seps.size)
@@ -61,6 +62,11 @@ class String
         (["",*seps]).each{|sp| ret=inn(ret,sp)}
         ret
     end
+
+    # puts 1145141919816.to_s(2).*(4).mulgrp_per_rvrv([4,2,2,2,2],["_","-","::","  ","\n"])                                                          01000110_11111100"
+    # => 1000  0101_0100-1111_1110::0011_1000-0000_0010
+    #    0100_0100-0010_1010::0111_1111-0001_1100  0000_0001-0010_0010::0001_0101-0011_1111
+    #    1000_1110-0000_0000::1001_0001-0000_1010  1001_1111-1100_0111::0000_0000-0100_1000
     def mulgrp_per_rvrv *a,**b
         self.reverse.mulgrp_per(*a,**b).reverse
     end
@@ -155,24 +161,24 @@ end
 
 
 class StackFn
-	def initialize fn
-		@fn = fn
-	end
+    def initialize fn
+        @fn = fn
+    end
 end
 class StackVal
-	def initialize val
-		@val = val
-	end
+    def initialize val
+        @val = val
+    end
 end
 class AlterStack
-	def initialize
-		stack = []
-	end
-	def << val
-	end
-	def spell code
-		
-	end
+    def initialize
+        stack = []
+    end
+    def << val
+    end
+    def spell code
+        
+    end
 end
 
 
